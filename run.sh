@@ -1,0 +1,1 @@
+wasm-pack build --target web && cd www && rm -rf node_modules && npm install && npm run dev
