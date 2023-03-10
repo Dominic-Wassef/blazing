@@ -1,7 +1,9 @@
 
 import init, { World, Direction } from "blazing";
+import { wasm } from "webpack";
 
-init().then(_ => {
+init().then(wasm => {
+  wasm.memory
   const CELL_SIZE = 20;
   const WORLD_WIDTH = 8;
   const SnakeSpawnIdx = Date.now() % (WORLD_WIDTH * WORLD_WIDTH);
@@ -14,6 +16,16 @@ init().then(_ => {
 
   canvas.height = worldWidth * CELL_SIZE;
   canvas.width = worldWidth * CELL_SIZE;
+
+  const snakeCellPtr = world.snake_cells();
+  const snakeLen = world.snake_length();
+
+  const snakeCells = new Uint32Array(
+    wasm.memory.buffer,
+    snakeCellPtr,
+    snakeLen
+  )
+
   document.addEventListener("keydown", e => {
     switch(e.code) {
       case "ArrowUp":
