@@ -1,5 +1,7 @@
 <div align="center">
 
+  <img src="https://www.vectorlogo.zone/logos/rust-lang/rust-lang-ar21.svg" alt="rust">
+
   <h1><code>wasm-bindgen</code></h1>
 
   <p>
