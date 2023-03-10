@@ -2,7 +2,7 @@
 
   <img src="https://www.vectorlogo.zone/logos/rust-lang/rust-lang-ar21.svg" alt="rust" width="400" height="200">
 
-  <h1><code>wasm-bindgen</code></h1>
+  <h1><code>wasm-bindgen & rust</code></h1>
 
   <p>
     <strong>Facilitating high-level interactions between Wasm modules and JavaScript.</strong>
