@@ -4,7 +4,7 @@ import { wasm } from "webpack";
 
 init().then(wasm => {
   const CELL_SIZE = 20;
-  const WORLD_WIDTH = 8;
+  const WORLD_WIDTH = 30;
   const snakeSpawnIdx = Date.now() % (WORLD_WIDTH * WORLD_WIDTH);
 
   const world = World.new(WORLD_WIDTH, snakeSpawnIdx);
@@ -60,7 +60,7 @@ init().then(wasm => {
       const col = cellIdx % worldWidth;
       const row = Math.floor(cellIdx / worldWidth);
 
-      ctx.fillStyle = i === 0 ? "#7878db" : "#FF0000";
+      ctx.fillStyle = i === 0 ? "#7878db" : "#000000";
 
       ctx.beginPath();
       ctx.fillRect(
@@ -79,7 +79,7 @@ init().then(wasm => {
   }
 
   function update() {
-    const fps = 7;
+    const fps = 10;
     setTimeout(() => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       world.step();
