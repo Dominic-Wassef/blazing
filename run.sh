@@ -1,1 +1,0 @@
-wasm-pack build --target web && cd www && rm -rf node_modules && rm -rf package-lock.json && npm install && npm run dev
